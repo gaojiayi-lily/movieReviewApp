@@ -1,0 +1,19 @@
+.root {
+    background-color: lightblue
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.button {
+    height: 40px;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+  }
