@@ -27,7 +27,7 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     try {
       await axios.post("auth/register", { email, username, password, profilePic });
-      navigate('/login');
+      navigate('/');
     } catch (err) {}
   };
   return (

@@ -14,7 +14,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     login({email, password}, dispatch);
-    navigate('/');
+    navigate('/login');
   };
 
   return (

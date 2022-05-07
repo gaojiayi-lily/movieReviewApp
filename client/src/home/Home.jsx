@@ -12,14 +12,15 @@ import { AuthContext } from '../context/AuthContext'
 export default function Home() {
   const [list, setList] = useState([]);
   const {user} = useContext(AuthContext);
-  console.log(user);
+  console.log(user !== null);
 
   useEffect(() => {
     const getRandomMovies = async () => {
       try {
         const res = await axios.get(`movies/random10`, {
           headers: {
-            token: "lily " + JSON.parse(localStorage.getItem("user")).accessToken
+            token: (user !== null) ? ("lily " + JSON.parse(localStorage.getItem("user")).accessToken) :
+            "lily eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzU1ZGU0ZWYzNjYwN2I4N2RiMTA4YSIsImlhdCI6MTY1MTg2MjAxMiwiZXhwIjoxNjUyMjk0MDEyfQ.0UAeeJJKRCU0iA1Z_pl9E1gLdAlVMk8GJdlmfD7Gly8"
           }
         });
         console.log(res);
